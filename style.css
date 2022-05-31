@@ -13,18 +13,14 @@
 body {
   display: flex;
   flex-direction: column;
-  /* background-image: url("background.png"); */
+
   font-family: var(--font-default);
   font-size: 18px;
-  max-width: 1440px;
-  /* max-height: 1024px; */
-  /* margin: 0 auto; */
-}
+  max-width: 1440px;}
 
 /****************** Header ********************/
 
 header {
-  /* overflow: hidden; */
   max-width: 1240px;
   margin: 50px 100px;
   justify-content: center;
@@ -51,7 +47,6 @@ header a {
   margin: 5px;
   text-decoration: none;
   font-size: 18px;
-  /* font-family: Roboto, sans-serif; */
 }
 
 header span {
@@ -76,36 +71,13 @@ header .icon {
 
 /****************** Main ********************/
 
-/* main {
-  font-size: 130%;
-  font-weight: bolder;
-  color: black;
-  padding-top: 0.5vw;
-  padding-left: 2vw;
-  padding-right: 2vw;
-  margin: 1px 20px 15px;
-  border-radius: 2rem;
-  text-align: justify;
-} */
-
-/* p {
-  margin-bottom: 0;
-  padding: 0.5vw;
-} */
-
-/* img {
-  padding-right: 1rem;
-} */
-
 .hero-section {
   max-width: 1240px;
-  /* min-height: 93vh; */
   border-radius: 7px;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   overflow: hidden;
   box-shadow: 0 2px 7px 2px rgba(0, 0, 0, 0.2);
-  /* margin-bottom: 10px; */
   margin: 0 auto;
 }
 
@@ -116,19 +88,8 @@ header .icon {
   color: #fff;
   position: relative;
   text-align: left;
-  /* min-width: 424px; */
   width: 495px;
 }
-
-/* .hero-content::after {
-  content: "";
-  width: 100%;
-  height: 100%;
-  background: #232323;
-  position: absolute;
-  right: -80px;
-  top: 0;
-} */
 
 .hero-content > * {
   position: relative;
@@ -142,9 +103,6 @@ header .icon {
 }
 
 .hero-text {
-  /* width: 146%; */
-  /* width: 100%; */
-  /* font-weight: normal; */
   margin: 60px auto 70px;
   font-size: 24px;
 }
@@ -155,7 +113,6 @@ header .icon {
 
 .hero-img img {
   width: 100%;
-  /* height: 100%; */
   max-height: 650px;
   object-fit: cover;
   display: block;
@@ -171,7 +128,6 @@ header .icon {
 .btn-signup {
   background: #fe142f;
   display: block;
-  /* margin: 0 auto; */
   border-radius: 7px;
   font-size: 25px;
   padding: 14px 35px;
@@ -312,6 +268,7 @@ input[data-error]::after {
     font-size: 0.4em;
     color: red;
 } */
+
 .checkbox-label,
 .checkbox2-label {
   position: relative;
@@ -485,11 +442,6 @@ input[data-error]::after {
 }
 
 /****************** Footer ********************/
-/* footer {
-  padding-left: 2vw;
-  padding-right: 2vw;
-  margin: 0 40px;
-} */
 
 .copyrights {
   width: 300px;
@@ -633,7 +585,6 @@ input[data-error]::after {
   .copyrights {
     margin: 25px auto 30px;
     text-align: center;
-    /* width: 100%; */
   }
 }
 
