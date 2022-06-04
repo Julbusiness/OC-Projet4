@@ -25,7 +25,6 @@ function good(e, event) {
 // ecouteur sur chaque input
 //? Le champ Prénom a un minimum de 2 caractères / n'est pas vide
 
-
 inputs["first"].addEventListener("input", inpFirst);
 
 function inpFirst(e) {
