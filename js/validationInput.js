@@ -2,6 +2,7 @@
 
 const inputs = document.forms["reserve"];
 const messageAlert = document.querySelectorAll(".message-alert");
+const checkCondition = document.querySelector("#checkbox1");
 
 //? Regex
 const regexName = /\S+([A-Za-z]){1,}/;
@@ -80,3 +81,13 @@ function inpQuantity(e) {
 //! Un bouton radio est sélectionné
 
 //! La case des conditions generales est sélectionnée
+ checkCondition.addEventListener("input", inpCheck);
+
+ function inpCheck(e) {
+   if (inputs["checkbox1"].checked === false) {
+    error(6, inputs["checkbox1"]);
+		e.preventDefault();
+   } else {
+    good(6, inputs["checkbox1"]);
+   }
+ }
