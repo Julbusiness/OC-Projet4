@@ -1,37 +1,31 @@
-//? Les constantes
-
-const inputs = document.forms["reserve"];
-const messageAlert = document.querySelectorAll(".message-alert");
-const checkCondition = document.querySelector("#checkbox1");
-
 //? Regex
-const regexName = /\S+([A-Za-z]){1,}/;
-const regexMail =
-	/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+const regexFirst = /\S+([A-Za-z]){1,}/;
+const regexLast = /\S+([A-Za-z]){1,}/;
+const regexMail =	/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 const regexNumber = /\b([0-9]|[1-9][0-9])\b/;
 
 //? Fonction si invalid
 
-function error(e, event) {
-	messageAlert[e].style.display = "inline";
-	event.style.border = "2px solid #e54858";
+function error(index, inpName, e) {
+	messageAlert[index].style.display = "inline";
+	inpName.style.border = "3px solid #e54858"; 
+	if(e !== undefined){
+		e.preventDefault();
+	} 
 }
 
 //? Fonction si valid
-function good(e, event) {
-	messageAlert[e].style.display = "none";
-	event.style.border = "none";
+function good(index, inpName) {
+	messageAlert[index].style.display = "none";
+	inpName.style.border = "3px solid #279e7a"; // ou none si on prefere la case sans couleur
 }
 
-// ecouteur sur chaque input
 //? Le champ Prénom a un minimum de 2 caractères / n'est pas vide
 
-inputs["first"].addEventListener("input", inpFirst);
-
 function inpFirst(e) {
-	if (inputs["first"].value.search(regexName) !== 0) {
-		error(0, inputs["first"]);
-		e.preventDefault();
+	if (inputs["first"].value.search(regexFirst) !== 0) {
+		error(0, inputs["first"], e);
 	} else {
 		good(0, inputs["first"]);
 	}
@@ -39,12 +33,9 @@ function inpFirst(e) {
 
 //? Le champ Nom a un minimum de 2 caractères / n'est pas vide
 
-inputs["last"].addEventListener("input", inpLast);
-
 function inpLast(e) {
-	if (inputs["last"].value.search(regexName) !== 0) {
-		error(1, inputs["last"]);
-		e.preventDefault();
+	if (inputs["last"].value.search(regexLast) !== 0) {
+		error(1, inputs["last"], e);
 	} else {
 		good(1, inputs["last"]);
 	}
@@ -52,27 +43,29 @@ function inpLast(e) {
 
 //? L'adresse électronique est valide
 
-inputs["email"].addEventListener("input", inpMail);
-
 function inpMail(e) {
 	if (inputs["email"].value.search(regexMail) !== 0) {
-		error(2, inputs["email"]);
-		e.preventDefault();
+		error(2, inputs["email"], e);
 	} else {
 		good(2, inputs["email"]);
 	}
 }
 
-//! Date d'anniversaire valide
+//? Date d'anniversaire valide
+
+function inpBirthdate(e) {
+	if (inputs["birthdate"].value === "") {
+		error(3, inputs["birthdate"], e);
+	} else {
+		good(3, inputs["birthdate"]);
+	}
+}
 
 //? Pour le nombre de concours, une valeur numérique est saisie
 
-inputs["quantity"].addEventListener("input", inpQuantity);
-
 function inpQuantity(e) {
 	if (inputs["quantity"].value.search(regexNumber) !== 0) {
-		error(4, inputs["quantity"]);
-		e.preventDefault();
+		error(4, inputs["quantity"], e);
 	} else {
 		good(4, inputs["quantity"]);
 	}
@@ -80,14 +73,23 @@ function inpQuantity(e) {
 
 //! Un bouton radio est sélectionné
 
-//! La case des conditions generales est sélectionnée
- checkCondition.addEventListener("input", inpCheck);
+function inpRadio(e) {
+	if (inputs["location"].value === "") {
+		messageAlert[5].style.display = "inline";
+		if(e !== undefined){
+			e.preventDefault();
+		} 
+	} else {
+		messageAlert[5].style.display = "none";
+	}
+}
 
- function inpCheck(e) {
-   if (inputs["checkbox1"].checked === false) {
-    error(6, inputs["checkbox1"]);
-		e.preventDefault();
-   } else {
-    good(6, inputs["checkbox1"]);
-   }
- }
+//? La case des conditions generales est sélectionnée
+
+function inpCheck(e) {
+	if (inputs["checkbox1"].checked === false) {
+		error(6, inputs["checkbox1"], e);
+	} else {
+		good(6, inputs["checkbox1"]);
+	}
+}
