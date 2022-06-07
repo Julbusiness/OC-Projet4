@@ -19,26 +19,32 @@ inputs["checkbox1"].addEventListener("input", inpCheck);
 //? ecouteur sur le submit du formulaire
 
 form.addEventListener("submit", function (e) {
-	const inputs = this;
+	//! const inputs = this;
 
-	//* Le champ Prenom a un minimum de 2 caractères / n'est pas vide
+	// Le champ Prenom a un minimum de 2 caractères / n'est pas vide
 	inpFirst(e);
+	console.log(inpFirst(e));
 
-	//* Le champ Nom a un minimum de 2 caractères / n'est pas vide
+	// Le champ Nom a un minimum de 2 caractères / n'est pas vide
 	inpLast(e);
-
-	//* L'adresse électronique est valid
+	console.log(inpLast(e));
+	// L'adresse électronique est valid
 	inpMail(e);
-
-	//* Date d'anniversaire valide
+	console.log(inpMail(e));
+	// Date d'anniversaire valide
 	inpBirthdate(e);
-
-	//* Pour le nombre de concours, une valeur numérique est saisie
+	console.log(inpBirthdate(e));
+	// Pour le nombre de concours, une valeur numérique est saisie
 	inpQuantity(e);
-
-	//* Un bouton radio est sélectionné
+	console.log(inpQuantity(e));
+	// Un bouton radio est sélectionné
 	inpRadio(e);
-
-	//* La case des conditions generales est sélectionnée
+	console.log(inpRadio(e));
+	// La case des conditions generales est sélectionnée
 	inpCheck(e);
+	console.log(inpCheck(e));
+
+	modalConfirm(e);
+
 });
+

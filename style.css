@@ -126,7 +126,8 @@ header .icon {
 
 /****************** button ********************/
 .btn-submit,
-.btn-signup {
+.btn-signup,
+.btn-submit-confirm {
   background: #fe142f;
   display: block;
   border-radius: 7px;
@@ -400,6 +401,96 @@ input {
 
 /****************** Validate ********************/
 
+.bground-confirm {
+  display: none;
+  position: fixed;
+  z-index: 99999;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+
+.content-confirm {
+  margin: 5% auto;
+  display: flex;
+  text-align: center;
+  width: 100%;
+  max-width: 500px;
+  height: 70%;
+  animation-name: modalopen;
+  animation-duration: var(--modal-duration);
+  background: #232323;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  color: #fff;
+  padding-top: 10px;
+}
+
+.close-confirm {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  width: 32px;
+  height: 32px;
+  opacity: 99999;
+  cursor: pointer;
+  transform: scale(0.7);
+}
+
+.close-confirm:before,
+.close-confirm:after {
+  position: absolute;
+  left: 15px;
+  content: " ";
+  height: 33px;
+  width: 3px;
+  background-color: #fff;
+}
+
+.close-confirm:before {
+  transform: rotate(45deg);
+}
+
+.close-confirm:after {
+  transform: rotate(-45deg);
+}
+
+.modal-body-confirm {
+  padding: 20px;
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 300;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+}
+
+.modal-body-confirm h2{
+  font-size: 26px;
+  font-weight: 300;
+  margin: 20px;
+}
+
+.modal-body-confirm p {
+  font-size: 16px;
+  font-weight: 300;
+  margin: 20px;
+}
+
+.btn-submit-confirm{
+  font-size: 20px;
+  padding: 10px 20px;
+  margin: 20px;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  text-transform: capitalize;
+}
 
 
 /****************** Footer ********************/
