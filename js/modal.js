@@ -25,6 +25,7 @@ function editNav() {
 // fonction déjà crée
 // On boucle d'abord sur tous les boutons de la classe 'modal-btn'
 // Puis on ajoute un écouteur sur le click qui lance la fonction 'launchModal'
+// la fonction 'launchModal' permet d'afficher le menu nav en mode responsive
 function launchModal() {
 	modalBg.style.display = "block";
 }
@@ -45,9 +46,9 @@ function closeModal() {
 
 //? Fonction pour ouvrir la modale de confirmation
 // Elle est appelée dans le fichier main.js au submit.
-// Dans cette fonction je vérifie que tout mes champs sont corrects et que aucun ne renvois false.
+// Dans cette fonction je vérifie que tout mes champs sont corrects et que aucun ne renvoi false.
 // Dans le cas ou tout est correct, j'ouvre la modal de confirmation
-// Sinon, j'affiche un message d'erreur.
+// Sinon, je bloque l'execution di code avec preventDefault.
 function modalConfirm(e) {
 	if (
 		inpFirst(e) !== false &&
@@ -59,10 +60,8 @@ function modalConfirm(e) {
 		inpCheck(e) !== false
 		) {
 			modalBgConfirm.style.display = "block";
-			console.log("ok");
 			e.preventDefault();
 		} else {
-			console.log("error");
 			e.preventDefault();
 		}
 	}

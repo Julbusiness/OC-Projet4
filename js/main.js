@@ -19,7 +19,6 @@ inputs["checkbox1"].addEventListener("input", inpCheck);
 //? ecouteur sur le submit du formulaire
 
 form.addEventListener("submit", function (e) {
-	//! const inputs = this;
 
 	// Le champ Prenom a un minimum de 2 caractères / n'est pas vide
 	inpFirst(e);
@@ -27,7 +26,7 @@ form.addEventListener("submit", function (e) {
 	// Le champ Nom a un minimum de 2 caractères / n'est pas vide
 	inpLast(e);
 
-	// L'adresse électronique est valid
+	// L'adresse électronique est valide
 	inpMail(e);
 
 	// Date d'anniversaire valide
